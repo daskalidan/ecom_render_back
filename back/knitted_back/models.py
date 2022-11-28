@@ -58,12 +58,12 @@ class Product(models.Model):
 
     def get_thumbnail(self):
         if self.thumbnail:
-            return 'https://knitted-back.onrender.com/' + self.thumbnail.url
+            return 'https://knitted-back.onrender.com' + self.thumbnail.url
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
-                return 'https://knitted-back.onrender.com/' + self.thumbnail.url
+                return 'https://knitted-back.onrender.com' + self.thumbnail.url
             else:
                 return ''
 
